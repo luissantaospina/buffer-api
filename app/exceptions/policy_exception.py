@@ -1,0 +1,2 @@
+class UnsupportedPolicy(Exception):
+    pass

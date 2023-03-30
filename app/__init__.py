@@ -10,4 +10,4 @@ app_context = app.app_context()
 app_context.push()
 cors = CORS(app)
 
-app.register_blueprint(api_routes, url_prefix='/api/v1')
+app.register_blueprint(api_routes, url_prefix='/api/v1/buffer')

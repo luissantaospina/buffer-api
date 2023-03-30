@@ -1,3 +1,6 @@
+from app.data_transfer_objects import MessageDTO
+
+
 class SingletonMeta(type):
     _instances = {}
 
@@ -11,8 +14,8 @@ class SingletonMeta(type):
 class Buffer(metaclass=SingletonMeta):
     buffer = []
 
-    def get_buffer(self):
+    def get_buffer(self) -> buffer:
         return self.buffer
     
-    def set_buffer(self, message):
-        return self.buffer.append(message)
+    def set_buffer(self, message_to_insert: MessageDTO) -> None:
+        self.buffer.append(message_to_insert)

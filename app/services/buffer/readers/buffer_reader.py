@@ -8,5 +8,5 @@ class BufferReader:
         self.__reader = reader
         super().__init__()
 
-    def reader(self, buffer):
+    def reader(self, buffer) -> None:
         self.__reader.resolve(buffer)

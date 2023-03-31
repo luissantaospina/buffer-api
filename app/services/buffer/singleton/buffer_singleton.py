@@ -17,5 +17,6 @@ class Buffer(metaclass=SingletonMeta):
     def get_buffer(self) -> buffer:
         return self.buffer
     
-    def set_buffer(self, message_to_insert: MessageDTO) -> None:
+    def set_buffer(self, message_to_insert: MessageDTO) -> MessageDTO:
         self.buffer.append(message_to_insert)
+        return message_to_insert

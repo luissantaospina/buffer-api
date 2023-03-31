@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from app.services.buffer import buffer_service
 from app.data_transfer_objects import MessageDTO, PolicyDTO
 from app.validators import validate_policy
-from app.exceptions import UnsupportedPolicy
+# from app.exceptions import UnsupportedPolicy
 
 api_routes = Blueprint('api', __name__)
 
@@ -15,11 +15,8 @@ def insert_item_to_buffer():
 
 @api_routes.route('/extract', methods=['POST'])
 def extract_item_to_buffer():
-    is_valid_policy = validate_policy(PolicyDTO(request.json['policy']))
-    if is_valid_policy:
-        buffer_service.extract_item_to_buffer(PolicyDTO(request.json['policy']))
-    else:
-        raise UnsupportedPolicy('The policy is not supported')
+    validate_policy(PolicyDTO(request.json['policy']))
+    buffer_service.extract_item_to_buffer(PolicyDTO(request.json['policy']))
     return '', 204
 
 

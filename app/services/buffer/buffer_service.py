@@ -1,9 +1,7 @@
-from app.services.buffer.buffer import Buffer
-from app.services.buffer.readers.buffer_reader import BufferReader
-from app.services.buffer.readers import ReaderFifo, ReaderLifo
+from app.services.buffer.singleton import Buffer
+from app.services.buffer.readers import BufferReader
 from app.data_transfer_objects import MessageDTO, PolicyDTO
 from app.factories import PolicyFactory
-from app.enums import PolicyEnum
 
 
 def get_all_buffer() -> Buffer:

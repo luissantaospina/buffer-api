@@ -1,4 +1,4 @@
-from app.services.buffer.i_buffer_reader import IBufferReader
+from app.services.buffer.interface.i_buffer_reader import IBufferReader
 
 
 class ReaderFifo(IBufferReader):

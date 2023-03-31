@@ -14,5 +14,5 @@ def insert_item_to_buffer(message_to_insert: MessageDTO) -> MessageDTO:
     return insert_item_to_buffer_service(message_to_insert)
 
 
-def extract_item_to_buffer(policy: PolicyDTO) -> None:
-    extract_item_to_buffer_service(policy)
+def extract_item_to_buffer(policy: PolicyDTO) -> MessageDTO:
+    return extract_item_to_buffer_service(policy)

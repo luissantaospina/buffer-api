@@ -15,8 +15,8 @@ def insert_item_to_buffer():
 @api_routes.route('/extract', methods=['POST'])
 def extract_item_to_buffer():
     validate_policy(PolicyDTO(request.json['policy']))
-    buffer_controller.extract_item_to_buffer(PolicyDTO(request.json['policy']))
-    return '', 204
+    data_extracted = buffer_controller.extract_item_to_buffer(PolicyDTO(request.json['policy']))
+    return {'result': 'the data has been extracted successfully', 'message': data_extracted}, 200
 
 
 @api_routes.route('/', methods=['GET'])

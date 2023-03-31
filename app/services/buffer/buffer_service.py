@@ -14,9 +14,11 @@ def insert_item_to_buffer_service(message_to_insert: MessageDTO) -> MessageDTO:
     return current_buffer.set_buffer(message_to_insert.body)
 
 
-def extract_item_to_buffer_service(policy: PolicyDTO) -> None:
+def extract_item_to_buffer_service(policy: PolicyDTO) -> MessageDTO | str:
     current_buffer = Buffer().get_buffer()
     if current_buffer:
         reader = PolicyFactory().create_reader(policy)
         buffer_reader = BufferReader(reader)
-        buffer_reader.reader(current_buffer)
+        return buffer_reader.reader(current_buffer)
+    else:
+        return ''

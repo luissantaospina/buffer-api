@@ -1,4 +1,5 @@
 from app.services.buffer.interface.i_buffer_reader import IBufferReader
+from app.data_transfer_objects import MessageDTO
 
 
 class BufferReader:
@@ -8,5 +9,5 @@ class BufferReader:
         self.__reader = reader
         super().__init__()
 
-    def reader(self, buffer) -> None:
-        self.__reader.resolve(buffer)
+    def reader(self, buffer) -> MessageDTO:
+        return self.__reader.resolve(buffer)

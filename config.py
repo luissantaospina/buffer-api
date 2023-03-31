@@ -6,7 +6,6 @@ load_dotenv()
 
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY", "")
-    TEMPLATE_FOLDER = "views/templates/"
     STATIC_FOLDER = "views/static/"
     DEBUG = False
 

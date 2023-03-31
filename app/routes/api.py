@@ -2,7 +2,6 @@ from flask import Blueprint, request
 from app.services.buffer import buffer_service
 from app.data_transfer_objects import MessageDTO, PolicyDTO
 from app.validators import validate_policy
-# from app.exceptions import UnsupportedPolicy
 
 api_routes = Blueprint('api', __name__)
 

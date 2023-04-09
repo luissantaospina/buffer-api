@@ -1,6 +1,5 @@
 from flask import Blueprint, request
 from app.data_transfer_objects import MessageDTO, PolicyDTO
-from app.validators import validate_policy
 from app.controllers import buffer_controller
 
 api_routes = Blueprint('api', __name__)
@@ -14,7 +13,6 @@ def insert_item_to_buffer():
 
 @api_routes.route('/extract', methods=['POST'])
 def extract_item_to_buffer():
-    validate_policy(PolicyDTO(request.json['policy']))
     data_extracted = buffer_controller.extract_item_to_buffer(PolicyDTO(request.json['policy']))
     return {'result': 'the data has been extracted successfully', 'message': data_extracted}, 200
 

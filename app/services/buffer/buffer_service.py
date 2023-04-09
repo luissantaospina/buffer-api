@@ -2,6 +2,7 @@ from app.services.buffer.singleton import Buffer
 from app.services.buffer.readers import BufferReader
 from app.data_transfer_objects import MessageDTO, PolicyDTO
 from app.factories import PolicyFactory
+from app.exceptions import EmptyBuffer
 
 
 def get_all_buffer_service() -> Buffer:
@@ -14,11 +15,11 @@ def insert_item_to_buffer_service(message_to_insert: MessageDTO) -> MessageDTO:
     return current_buffer.set_buffer(message_to_insert.body)
 
 
-def extract_item_to_buffer_service(policy: PolicyDTO) -> MessageDTO | str:
+def extract_item_to_buffer_service(policy: PolicyDTO) -> MessageDTO:
     current_buffer = Buffer().get_buffer()
     if current_buffer:
         reader = PolicyFactory().create_reader(policy)
         buffer_reader = BufferReader(reader)
         return buffer_reader.reader(current_buffer)
     else:
-        return ''
+        raise EmptyBuffer('The buffer is currently empty')

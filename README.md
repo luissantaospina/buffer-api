@@ -1,6 +1,6 @@
 # Buffer
 
-Esta es una aplicación que gestiona la información al interior de un [buffer](https://www.geeknetic.es/Buffer/que-es-y-para-que-sirve]), permite la consulta, inserción y extracción utilizando [FIFO](https://www.noegasystems.com/blog/logistica/fifo-y-lifo-tecnicas-de-almacenaje) y [LIFO](https://www.noegasystems.com/blog/logistica/fifo-y-lifo-tecnicas-de-almacenaje)
+Esta es una aplicación que gestiona la información al interior de un [buffer](https://www.geeknetic.es/Buffer/que-es-y-para-que-sirve]) a través de cache con la ayuda de [redis](https://redis.io/), esta permite la consulta, inserción y extracción utilizando [FIFO](https://www.noegasystems.com/blog/logistica/fifo-y-lifo-tecnicas-de-almacenaje) y [LIFO](https://www.noegasystems.com/blog/logistica/fifo-y-lifo-tecnicas-de-almacenaje)
 
 ## Documentación
 1. Documentación en postman (colección): https://documenter.getpostman.com/view/6886787/2s93RTSYX7
@@ -19,6 +19,7 @@ La app cuenta con 3 métodos:
 3. flask latest 
 4. flask-cors latest 
 5. python-dotenv v1.0.0
+6. redis
 
 ### Instrucciones
 1. Crear el archivo `.env` con la llave secreta
@@ -26,7 +27,8 @@ La app cuenta con 3 métodos:
 2. Crear entorno virtual con el comando `py -m venv venv`  
 3. Activar entorno virtual con el comando `venv\Scripts\active`
 4. Instalar dependencias con el comando `pip install -r requirements.txt`
-5. Iniciar el proyecto con el comando `flask run`
+5. Iniciar redis `redis-server`
+6. Iniciar el proyecto con el comando `flask run`
 
-#
+
 #### By Luis Santa

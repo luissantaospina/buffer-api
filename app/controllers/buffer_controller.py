@@ -1,4 +1,3 @@
-from app.services.buffer.singleton import Buffer
 from app.data_transfer_objects import MessageDTO, PolicyDTO
 from app.services.buffer.buffer_service import \
     get_all_buffer_service,\
@@ -6,7 +5,7 @@ from app.services.buffer.buffer_service import \
     extract_item_to_buffer_service
 
 
-def get_all_buffer() -> Buffer:
+def get_all_buffer() -> list:
     return get_all_buffer_service()
 
 

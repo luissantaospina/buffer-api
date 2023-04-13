@@ -8,7 +8,7 @@ api_routes = Blueprint('api', __name__)
 @api_routes.route('/insert', methods=['POST'])
 def insert_item_to_buffer():
     data_inserted = buffer_controller.insert_item_to_buffer(MessageDTO(request.json['message']))
-    return {'result': 'the data has been inserted successfully', 'message': data_inserted}, 201
+    return {'result': 'the data has been inserted successfully', 'message': data_inserted.body}, 201
 
 
 @api_routes.route('/extract', methods=['POST'])

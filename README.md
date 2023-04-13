@@ -14,8 +14,7 @@ La app cuenta con 3 métodos:
 
 ## Despliegue en ambiente local
 ### Requerimientos
-1. windows v11 64 bits
-2. docker
+1. docker
 
 ### Instrucciones
 1. Modificar el nombre del archivo `.env.develop`, debe quedar con el nombre `.env`

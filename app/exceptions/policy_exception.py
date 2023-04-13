@@ -4,3 +4,7 @@ class UnsupportedPolicy(Exception):
 
 class EmptyBuffer(Exception):
     pass
+
+
+class FailCache(Exception):
+    pass

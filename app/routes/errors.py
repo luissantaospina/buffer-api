@@ -1,5 +1,5 @@
 from flask import jsonify, Blueprint, Response
-from ..exceptions import UnsupportedPolicy, EmptyBuffer
+from ..exceptions import UnsupportedPolicy, EmptyBuffer, FailCache
 
 errors_scope = Blueprint("errors", __name__)
 
@@ -24,6 +24,13 @@ def __generate_info_response(info: Exception) -> Response:
 def handle_user_not_found(error: UnsupportedPolicy) -> Response:
     response = __generate_error_response(error)
     response.status_code = 422
+    return response
+
+
+@errors_scope.app_errorhandler(FailCache)
+def handle_user_not_found(error: FailCache) -> Response:
+    response = __generate_error_response(error)
+    response.status_code = 500
     return response
 
 

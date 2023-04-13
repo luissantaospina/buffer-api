@@ -18,9 +18,10 @@ La app cuenta con 3 métodos:
 2. docker
 
 ### Instrucciones
-1. Crear el archivo `.env` con la llave secreta
+1. Modificar el nombre del archivo `.env.develop`, debe quedar con el nombre `.env`
 ![env.png](app%2Fviews%2Fstatic%2Fenv.png)
 2. Crear imagen y contenedor de docker con el comando `docker-compose up`
+3. El proyecto queda accesible en el puerto http://127.0.0.1:5000 de manera local
 
 
 #### By Luis Santa

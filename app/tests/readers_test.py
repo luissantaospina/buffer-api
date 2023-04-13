@@ -1,5 +1,5 @@
 import unittest
-from app.services.buffer.interface.impl import ReaderFifo, ReaderLifo
+from app.services.buffer.i_buffer.impl import ReaderFifo, ReaderLifo
 
 
 class TestReader(unittest.TestCase):

@@ -15,20 +15,12 @@ La app cuenta con 3 métodos:
 ## Despliegue en ambiente local
 ### Requerimientos
 1. windows v11 64 bits
-2. python v3.10
-3. flask latest 
-4. flask-cors latest 
-5. python-dotenv v1.0.0
-6. redis
+2. docker
 
 ### Instrucciones
 1. Crear el archivo `.env` con la llave secreta
 ![env.png](app%2Fviews%2Fstatic%2Fenv.png)
-2. Crear entorno virtual con el comando `py -m venv venv`  
-3. Activar entorno virtual con el comando `venv\Scripts\active`
-4. Instalar dependencias con el comando `pip install -r requirements.txt`
-5. Iniciar redis `redis-server`
-6. Iniciar el proyecto con el comando `flask run`
+2. Crear imagen y contenedor de docker con el comando `docker-compose up`
 
 
 #### By Luis Santa

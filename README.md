@@ -4,7 +4,7 @@ Esta es una aplicación que gestiona la información al interior de un [buffer](
 
 ## Documentación
 1. Documentación en postman (colección): https://documenter.getpostman.com/view/6886787/2s93RTSYX7
-2. Servidor: http://157.230.85.83:5000
+2. Servidor: http://142.93.3.61
 
 ## Uso
 La app cuenta con 3 métodos:
@@ -14,7 +14,8 @@ La app cuenta con 3 métodos:
 
 ## Despliegue en ambiente local
 ### Requerimientos
-1. docker
+1. Docker
+2. Docker compose
 
 ### Instrucciones
 1. Modificar el nombre del archivo `.env.develop`, debe quedar con el nombre `.env`

@@ -7,12 +7,15 @@ import redis
 
 
 def get_all_buffer_repository() -> list:
-    cached_buffer = redis_cache.get('buffer')
-    if cached_buffer is None:
-        cached_buffer = []
-    else:
-        cached_buffer = json.loads(cached_buffer.decode('utf-8'))
-    return cached_buffer
+    try:
+        cached_buffer = redis_cache.get('buffer')
+        if cached_buffer is None:
+            cached_buffer = []
+        else:
+            cached_buffer = json.loads(cached_buffer.decode('utf-8'))
+        return cached_buffer
+    except redis.exceptions.ConnectionError as ex:
+        raise FailCache(ex)
 
 
 def insert_item_to_buffer_repository(message_to_insert: MessageDTO) -> MessageDTO:
